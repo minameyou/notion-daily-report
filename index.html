@@ -239,9 +239,9 @@
                     ></textarea>
                 </div>
                 <div class="btn-group">
-                    <button class="btn" onclick="generateReport('1번 프로젝트')" style="flex: 1;">1번 프로젝트</button>
-                    <button class="btn" onclick="generateReport('2번 프로젝트')" style="flex: 1;">2번 프로젝트</button>
-                    <button class="btn" onclick="generateReport('3번 프로젝트')" style="flex: 1;">3번 프로젝트</button>
+                    <button class="btn" onclick="generateReport('메이플W')" style="flex: 1;">메이플W</button>
+                    <button class="btn" onclick="generateReport('메이플R&D')" style="flex: 1;">메이플R&D</button>
+                    <button class="btn" onclick="generateReport('클래식메이플')" style="flex: 1;">클래식메이플</button>
                 </div>
                 <div class="btn-group" style="margin-top: 10px;">
                     <button class="btn btn-secondary" onclick="clearInput()">초기화</button>
@@ -385,7 +385,7 @@
         document.getElementById('taskInput').addEventListener('keydown', function(e) {
             // Ctrl+Enter 또는 Cmd+Enter로 1번 프로젝트 보고서 생성
             if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
-                generateReport('1번 프로젝트');
+                generateReport('메이플W');
             }
         });
     </script>
