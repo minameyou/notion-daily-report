@@ -15,20 +15,20 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
             background: #e8eaf0;
             min-height: 100vh;
-            padding: 20px;
+            padding: 15px;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
             background: white;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             overflow: hidden;
         }
 
         .content {
-            padding: 30px;
+            padding: 15px;
         }
 
         .info-box {
@@ -46,10 +46,10 @@
         }
 
         .input-section {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 25px;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            margin-bottom: 15px;
         }
 
         .input-section h2 {
@@ -72,11 +72,11 @@
 
         textarea {
             width: 100%;
-            min-height: 200px;
-            padding: 15px;
+            min-height: 120px;
+            padding: 10px;
             border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 14px;
+            border-radius: 6px;
+            font-size: 13px;
             font-family: inherit;
             resize: vertical;
             transition: border-color 0.3s;
@@ -95,9 +95,9 @@
             background: #6c757d;
             color: white;
             border: none;
-            padding: 12px 30px;
-            border-radius: 8px;
-            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
             font-weight: 600;
             cursor: pointer;
             transition: transform 0.2s, box-shadow 0.2s;
@@ -116,7 +116,7 @@
 
         .btn-group {
             display: flex;
-            gap: 10px;
+            gap: 8px;
         }
 
         .btn-secondary {
@@ -139,13 +139,13 @@
 
         .report-box {
             background: #f8f9fa;
-            padding: 20px;
-            border-radius: 12px;
+            padding: 15px;
+            border-radius: 8px;
             border: 2px solid #e0e0e0;
-            min-height: 200px;
+            min-height: 120px;
             white-space: pre-wrap;
-            font-size: 14px;
-            line-height: 1.8;
+            font-size: 13px;
+            line-height: 1.6;
             color: #333;
         }
 
@@ -157,11 +157,12 @@
         }
 
         .copy-btn {
-            margin-top: 10px;
+            margin-top: 8px;
             background: #28a745;
             width: auto;
             display: inline-block;
-            padding: 10px 25px;
+            padding: 8px 20px;
+            font-size: 13px;
         }
 
         .copy-btn:hover {
@@ -170,29 +171,29 @@
 
         .stats {
             display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 10px;
+            margin-bottom: 15px;
             justify-content: flex-start;
         }
 
         .stat-card {
             background: #6c757d;
             color: white;
-            padding: 10px 15px;
-            border-radius: 8px;
+            padding: 8px 12px;
+            border-radius: 6px;
             text-align: center;
             display: inline-block;
             min-width: auto;
         }
 
         .stat-number {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
         }
 
         .stat-label {
-            font-size: 11px;
+            font-size: 10px;
             opacity: 0.9;
         }
 
@@ -227,23 +228,69 @@
         <div class="content">
             <div class="input-section">
                 <div class="input-group">
+                    <label style="font-weight: 600; color: #333; font-size: 14px; margin-bottom: 8px; display: block;">공통 사항</label>
                     <textarea 
-                        id="taskInput" 
-                        placeholder="노션에서 오늘 완료한 작업 목록을 복사하여 붙여 넣으세요.
+                        id="commonInput" 
+                        placeholder="모든 프로젝트 공통 작업
 
 예시:
-유관 부서 미팅
-리뷰 회의
-테스트 설계
-자동화 연구"
+팀 회의 참석
+주간 업무 보고"
+                        style="min-height: 80px;"
                     ></textarea>
                 </div>
-                <div class="btn-group">
-                    <button class="btn" onclick="generateReport('메이플W')" style="flex: 1;">메이플W</button>
-                    <button class="btn" onclick="generateReport('메이플R&D')" style="flex: 1;">메이플R&D</button>
-                    <button class="btn" onclick="generateReport('클래식메이플')" style="flex: 1;">클래식메이플</button>
+            </div>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <label style="font-weight: 600; color: #333; font-size: 14px; margin-bottom: 8px; display: block;">메이플W</label>
+                    <textarea 
+                        id="project1Input" 
+                        placeholder="메이플W 작업
+
+예시:
+A 기능 개발
+테스트 완료"
+                        style="min-height: 80px;"
+                    ></textarea>
                 </div>
-                <div class="btn-group" style="margin-top: 10px;">
+            </div>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <label style="font-weight: 600; color: #333; font-size: 14px; margin-bottom: 8px; display: block;">메이플R&D</label>
+                    <textarea 
+                        id="project2Input" 
+                        placeholder="메이플R&D 작업
+
+예시:
+B 버그 수정
+리뷰 완료"
+                        style="min-height: 80px;"
+                    ></textarea>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <label style="font-weight: 600; color: #333; font-size: 14px; margin-bottom: 8px; display: block;">클래식메이플</label>
+                    <textarea 
+                        id="project3Input" 
+                        placeholder="클래식메이플 작업
+
+예시:
+C 테스트 설계
+자동화 연구"
+                        style="min-height: 80px;"
+                    ></textarea>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <div class="btn-group">
+                    <button class="btn" onclick="generateReport()">보고서 생성</button>
+                </div>
+                <div class="btn-group" style="margin-top: 8px;">
                     <button class="btn btn-secondary" onclick="clearInput()">초기화</button>
                 </div>
             </div>
@@ -292,8 +339,12 @@
             // 초기화 코드 (필요시)
         });
 
-        function generateReport(projectTitle) {
-            const input = document.getElementById('taskInput').value.trim();
+        function generateReport() {
+            const commonInput = document.getElementById('commonInput').value.trim();
+            const project1Input = document.getElementById('project1Input').value.trim();
+            const project2Input = document.getElementById('project2Input').value.trim();
+            const project3Input = document.getElementById('project3Input').value.trim();
+            
             const reportBox = document.getElementById('reportBox');
             const copyBtn = document.getElementById('copyBtn');
             const statsSection = document.getElementById('statsSection');
@@ -301,38 +352,94 @@
             
             messageBox.innerHTML = '';
             
-            if (!input) {
-                messageBox.innerHTML = '<div style="color: #c62828; font-size: 14px; margin-top: 10px; margin-bottom: 10px;">❌ 작업 목록을 입력해주세요.</div>';
+            // 모든 입력이 비어있는지 확인
+            if (!commonInput && !project1Input && !project2Input && !project3Input) {
+                messageBox.innerHTML = '<div style="color: #c62828; font-size: 14px; margin-top: 10px; margin-bottom: 10px;">❌ 최소 하나 이상의 항목을 입력해주세요.</div>';
                 return;
             }
-
-            // 텍스트를 줄 단위로 분리하고 빈 줄 제거
-            const lines = input.split('\n')
-                .map(line => line.trim())
-                .filter(line => line.length > 0);
-            
-            if (lines.length === 0) {
-                messageBox.innerHTML = '<div style="color: #c62828; font-size: 14px; margin-top: 10px; margin-bottom: 10px;">❌ 유효한 작업 목록이 없습니다.</div>';
-                return;
-            }
-
-            // 기본 양식 사용
-            const selectedTemplate = `[${projectTitle}]\n{tasks}`;
 
             // 보고서 생성
-            const today = new Date();
-            const report = generateReportText(lines, today, selectedTemplate);
+            let report = '';
+            let totalCount = 0;
+            
+            // 공통 사항
+            if (commonInput) {
+                const commonLines = commonInput.split('\n')
+                    .map(line => line.trim())
+                    .filter(line => line.length > 0);
+                
+                if (commonLines.length > 0) {
+                    report += '[공통]\n';
+                    commonLines.forEach(line => {
+                        report += `- ${line}\n`;
+                    });
+                    report += '\n';
+                    totalCount += commonLines.length;
+                }
+            }
+            
+            // 메이플W
+            if (project1Input) {
+                const project1Lines = project1Input.split('\n')
+                    .map(line => line.trim())
+                    .filter(line => line.length > 0);
+                
+                if (project1Lines.length > 0) {
+                    report += '[메이플W]\n';
+                    project1Lines.forEach(line => {
+                        report += `- ${line}\n`;
+                    });
+                    report += '\n';
+                    totalCount += project1Lines.length;
+                }
+            }
+            
+            // 메이플R&D
+            if (project2Input) {
+                const project2Lines = project2Input.split('\n')
+                    .map(line => line.trim())
+                    .filter(line => line.length > 0);
+                
+                if (project2Lines.length > 0) {
+                    report += '[메이플R&D]\n';
+                    project2Lines.forEach(line => {
+                        report += `- ${line}\n`;
+                    });
+                    report += '\n';
+                    totalCount += project2Lines.length;
+                }
+            }
+            
+            // 클래식메이플
+            if (project3Input) {
+                const project3Lines = project3Input.split('\n')
+                    .map(line => line.trim())
+                    .filter(line => line.length > 0);
+                
+                if (project3Lines.length > 0) {
+                    report += '[클래식메이플]\n';
+                    project3Lines.forEach(line => {
+                        report += `- ${line}\n`;
+                    });
+                    report += '\n';
+                    totalCount += project3Lines.length;
+                }
+            }
+            
+            // 마지막 줄바꿈 제거
+            report = report.trim();
             
             reportBox.textContent = report;
             reportBox.classList.remove('empty');
             copyBtn.style.display = 'inline-block';
             
             // 통계 업데이트
-            document.getElementById('statCount').textContent = lines.length;
+            const today = new Date();
+            document.getElementById('statCount').textContent = totalCount;
             document.getElementById('statDate').textContent = `${today.getMonth() + 1}/${today.getDate()}`;
             statsSection.style.display = 'block';
 
-            messageBox.innerHTML = `<div class="success">✅ ${projectTitle} 보고서가 생성되었습니다! (완료된 작업: ${lines.length}개)</div>`;
+            messageBox.innerHTML = `<div class="success">✅ 보고서가 생성되었습니다! (완료된 작업: ${totalCount}개)</div>`;
         }
 
         function generateReportText(tasks, date, template) {
@@ -354,7 +461,10 @@
         }
 
         function clearInput() {
-            document.getElementById('taskInput').value = '';
+            document.getElementById('commonInput').value = '';
+            document.getElementById('project1Input').value = '';
+            document.getElementById('project2Input').value = '';
+            document.getElementById('project3Input').value = '';
             document.getElementById('reportBox').textContent = '여기에 보고서가 생성됩니다.';
             document.getElementById('reportBox').classList.add('empty');
             document.getElementById('copyBtn').style.display = 'none';
@@ -382,10 +492,10 @@
         }
 
         // 키보드 단축키
-        document.getElementById('taskInput').addEventListener('keydown', function(e) {
-            // Ctrl+Enter 또는 Cmd+Enter로 1번 프로젝트 보고서 생성
+        document.addEventListener('keydown', function(e) {
+            // Ctrl+Enter 또는 Cmd+Enter로 보고서 생성
             if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
-                generateReport('메이플W');
+                generateReport();
             }
         });
     </script>
